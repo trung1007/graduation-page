@@ -163,31 +163,6 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="gallery" className="border-t border-gold-light/25 bg-cream py-16 md:py-20 reveal">
-            <div className="mx-auto max-w-7xl px-6 md:px-12">
-              <div className="mb-10 text-center">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-dark">Khoảnh khắc Quỳnh Chi</p>
-                <h2 className="mt-3 font-serif text-4xl text-charcoal md:text-5xl">Bộ ảnh kỷ niệm</h2>
-                <p className="mx-auto mt-4 max-w-2xl text-sm font-light leading-relaxed text-charcoal-light md:text-base">Một bộ sưu tập ảnh đẹp, vừa lãng mạn vừa nhẹ nhàng để kể lại hành trình tốt nghiệp của Quỳnh Chi.</p>
-              </div>
-
-              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
-                  <img src="/images/chi-1.jpg" alt="Ảnh Quỳnh Chi 1" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
-                </div>
-                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
-                  <img src="/images/chi-2.jpg" alt="Ảnh Quỳnh Chi 2" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
-                </div>
-                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
-                  <img src="/images/chi-3.jpg" alt="Ảnh Quỳnh Chi 3" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
-                </div>
-                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
-                  <img src="/images/chi-4.jpg" alt="Ảnh Quỳnh Chi 4" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* RSVP */}
           <section id="rsvp" className="py-16 md:py-20 reveal">
             <div className="mx-auto max-w-3xl px-6">
