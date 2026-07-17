@@ -148,10 +148,6 @@ export default function Home() {
                   Thời gian & Địa điểm
                 </h2>
 
-                <p className="mx-auto mt-4 max-w-2xl text-sm font-light leading-relaxed text-charcoal-light md:text-base">
-                  Mọi chi tiết quan trọng đều nằm trong cùng một khối, dễ nhìn và thuận
-                  tiện khi tham khảo.
-                </p>
               </div>
 
               {/* Information card + image */}
@@ -161,7 +157,7 @@ export default function Home() {
                   <div className="relative z-10 mx-auto w-[92%] overflow-hidden rounded-[2rem] border border-gold-light/50 bg-cream px-6 py-8 shadow-xl md:w-[88%] md:px-10 md:py-10">
                     <div className="mx-auto max-w-md text-center">
                       {/* Time */}
-                      <p className="font-serif text-base font-medium uppercase tracking-[0.08em] text-charcoal md:text-lg">
+                      <p className="font-serif text-base font-medium uppercase tracking-[0.08em] text-charcoal md:text-3xl">
                         8:00, Thứ Sáu
                       </p>
 
@@ -171,7 +167,7 @@ export default function Home() {
                         <div className="flex flex-col items-center">
                           <div className="h-px w-full bg-gold-dark/70" />
 
-                          <p className="my-2 whitespace-nowrap font-serif text-sm uppercase text-charcoal sm:text-base md:text-lg">
+                          <p className="my-2 whitespace-nowrap font-serif text-2xl uppercase text-charcoal sm:text-base md:text-4xl">
                             Tháng 07
                           </p>
 
@@ -179,7 +175,7 @@ export default function Home() {
                         </div>
 
                         {/* Day */}
-                        <div className="px-1 font-serif text-5xl leading-none text-charcoal md:text-6xl">
+                        <div className="px-1 font-serif text-6xl leading-none text-charcoal md:text-8xl">
                           24
                         </div>
 
@@ -187,7 +183,7 @@ export default function Home() {
                         <div className="flex flex-col items-center">
                           <div className="h-px w-full bg-gold-dark/70" />
 
-                          <p className="my-2 whitespace-nowrap font-serif text-sm uppercase text-charcoal sm:text-base md:text-lg">
+                          <p className="my-2 whitespace-nowrap font-serif text-2xl uppercase text-charcoal sm:text-base md:text-4xl">
                             Năm 2026
                           </p>
 
@@ -197,7 +193,7 @@ export default function Home() {
 
                       {/* Location */}
                       <div className="mt-8">
-                        <p className="font-serif text-sm font-medium text-charcoal-light">
+                        <p className="font-serif text-xl font-medium text-charcoal-light">
                           Tại địa điểm:
                         </p>
 
@@ -236,18 +232,17 @@ export default function Home() {
                   </div>
 
                   {/* Image */}
-                  <div className="-mt-8 overflow-hidden border border-gold-light/40 bg-cream shadow-lg md:-mt-10">
-                    <div className="relative aspect-[4/3] w-full md:aspect-[16/9]">
+                  {/* <div className="mx-auto mt-8 overflow-hidden rounded-[2rem] border border-gold-light/40 bg-cream shadow-lg w-full max-w-3xl">
+                    <div className="relative w-full">
                       <img
-                        src="/images/chi-horizon.jpg"
+                        src="/images/chi-3.jpg"
                         alt="Khoảnh khắc lễ tốt nghiệp"
-                        className="h-full w-full object-cover object-center transition duration-700 hover:scale-[1.02]"
+                        className="mx-auto block max-h-[520px] max-w-full object-contain object-top transition duration-700 hover:scale-[1.02]"
                       />
 
-                      {/* Soft overlay */}
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -321,9 +316,9 @@ export default function Home() {
         <footer className="border-t border-gold-dark/20 bg-charcoal py-14 text-center text-cream">
           <div className="mx-auto max-w-3xl space-y-5 px-6">
             <h2 className="font-serif text-3xl font-light italic text-gold md:text-4xl">Trân trọng cảm ơn</h2>
-            <p className="mx-auto max-w-xl text-sm font-light leading-relaxed text-cream/65">Cảm ơn mọi người đã luôn yêu thương, đồng hành và dành những lời chúc tốt đẹp cho Quỳnh Chi. Sự hiện diện và tình cảm của mọi người sẽ làm ngày tốt nghiệp này trở nên trọn vẹn hơn.</p>
+            <p className="mx-auto max-w-xl text-sm font-light leading-relaxed text-cream/65">Cảm ơn mọi người đã luôn yêu thương, đồng hành và dành những lời chúc tốt đẹp cho mình. Sự hiện diện và tình cảm của mọi người sẽ làm ngày tốt nghiệp này trở nên trọn vẹn hơn.</p>
             <div className="mx-auto h-px w-12 bg-gold/50"></div>
-            <p className="text-xs uppercase tracking-[0.28em] text-gold">Lê Nguyễn Quỳnh Chi · 2026</p>
+            <p className="text-xl uppercase tracking-[0.28em] text-gold">Lê Nguyễn Quỳnh Chi · 2026</p>
           </div>
         </footer>
       </div>
