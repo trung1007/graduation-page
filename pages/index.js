@@ -58,10 +58,31 @@ export default function Home() {
 
     rsvpForm?.addEventListener('submit', handleSubmit)
 
+    const revealElements = document.querySelectorAll('.reveal')
+    let observer
+    if (window.IntersectionObserver) {
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible')
+          } else {
+            entry.target.classList.remove('reveal-visible')
+          }
+        })
+      }, { threshold: 0.15 })
+
+      revealElements.forEach((element) => observer.observe(element))
+    } else {
+      revealElements.forEach((element) => element.classList.add('reveal-visible'))
+    }
+
     return () => {
       rsvpForm?.removeEventListener('submit', handleSubmit)
       attendanceYes?.removeEventListener('change', updateGuestCountVisibility)
       attendanceNo?.removeEventListener('change', updateGuestCountVisibility)
+      if (observer) {
+        observer.disconnect()
+      }
     }
   }, [])
 
@@ -79,7 +100,7 @@ export default function Home() {
       <div className="antialiased">
         <header className="fixed inset-x-0 top-0 z-40 border-b border-gold-light/30 bg-cream/90 backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
-            <a href="#hero" className="font-serif text-xl tracking-wide text-charcoal">Quỳnh Chi <span className="font-light text-gold">2026</span></a>
+            <a href="#hero" className="font-serif text-xl tracking-wide text-charcoal">Quỳnh Chi 2026</a>
             <nav className="flex items-center gap-4 text-[10px] font-medium uppercase tracking-[0.15em] text-charcoal-light sm:gap-5 sm:text-[11px] md:gap-8 md:tracking-[0.18em]">
               <a href="#details" className="transition hover:text-gold-dark">Thông tin</a>
               <a href="#rsvp" className="rounded-full bg-charcoal px-4 py-2 text-cream transition hover:bg-gold hover:text-charcoal-dark">Xác nhận</a>
@@ -89,30 +110,30 @@ export default function Home() {
 
         <main>
           {/* Hero */}
-          <section id="hero" className="min-h-screen pt-20">
-            <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl grid-cols-1 items-center gap-12 px-6 py-14 md:px-12 lg:grid-cols-2 lg:gap-16">
-              <div className="space-y-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">Thư mời chúc mừng tốt nghiệp</p>
-                <h1 className="font-serif text-5xl leading-[0.95] text-charcoal sm:text-6xl lg:text-7xl xl:text-8xl">Lê Nguyễn<br /><span className="font-light italic text-gold">Quỳnh Chi</span></h1>
+          <section id="hero" className="relative min-h-screen pt-20 reveal overflow-hidden bg-cream-light">
+            <div className="mx-auto relative grid min-h-[calc(100vh-5rem)] max-w-7xl grid-cols-1 items-center gap-8 px-6 py-12 md:px-12 lg:grid-cols-2 lg:gap-12">
+              <div className="space-y-7 relative z-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-charcoal">Thư mời chúc mừng tốt nghiệp</p>
+                <h1 className="font-serif text-5xl leading-[0.95] text-charcoal sm:text-6xl lg:text-7xl xl:text-8xl">Lê Nguyễn<br /><span className="font-light italic text-charcoal/90">Quỳnh Chi</span></h1>
                 <div className="h-px w-20 bg-gold"></div>
                 <p className="max-w-xl font-serif text-xl italic leading-relaxed text-charcoal-light md:text-2xl">“Một hành trình đẹp đã đi đến cột mốc đáng nhớ. Chi rất mong được gặp mọi người trong ngày đặc biệt này để cùng lưu giữ những khoảnh khắc thật vui và ý nghĩa.”</p>
                 <p className="text-sm font-light leading-relaxed text-charcoal-light">Đại học Luật Hà Nội · Khóa K47 (2022–2026)</p>
                 <a href="#details" className="inline-flex items-center justify-center rounded bg-charcoal px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-cream transition hover:bg-gold hover:text-charcoal-dark">Xem thông tin buổi lễ</a>
               </div>
 
-              <div className="relative mx-auto w-full max-w-lg">
+              <div className="relative mx-auto w-full max-w-lg relative z-10">
                 <div className="absolute inset-0 translate-x-4 translate-y-4 rounded border border-gold"></div>
-                <div className="relative aspect-[3/4] overflow-hidden rounded bg-cream-dark">
+                <div className="relative aspect-[3/4] overflow-hidden rounded bg-cream-dark shadow-2xl shadow-charcoal/20">
                   <img src="/images/chi-potratit.jpg" alt="Lê Nguyễn Quỳnh Chi - Đại học Luật Hà Nội" className="h-full w-full object-cover" width="600" height="800" />
                 </div>
               </div>
             </div>
           </section>
 
-          
+
 
           {/* Details */}
-          <section id="details" className="border-y border-gold-light/25 bg-cream-light py-20 md:py-28">
+          <section id="details" className="border-y border-gold-light/25 bg-cream-light py-16 md:py-20 reveal">
             <div className="mx-auto max-w-6xl px-6 md:px-12">
               <div className="mb-12 text-center">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-dark">Thông tin buổi lễ</p>
@@ -142,8 +163,33 @@ export default function Home() {
             </div>
           </section>
 
+          <section id="gallery" className="border-t border-gold-light/25 bg-cream py-16 md:py-20 reveal">
+            <div className="mx-auto max-w-7xl px-6 md:px-12">
+              <div className="mb-10 text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-dark">Khoảnh khắc Quỳnh Chi</p>
+                <h2 className="mt-3 font-serif text-4xl text-charcoal md:text-5xl">Bộ ảnh kỷ niệm</h2>
+                <p className="mx-auto mt-4 max-w-2xl text-sm font-light leading-relaxed text-charcoal-light md:text-base">Một bộ sưu tập ảnh đẹp, vừa lãng mạn vừa nhẹ nhàng để kể lại hành trình tốt nghiệp của Quỳnh Chi.</p>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
+                  <img src="/images/chi-1.jpg" alt="Ảnh Quỳnh Chi 1" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+                </div>
+                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
+                  <img src="/images/chi-2.jpg" alt="Ảnh Quỳnh Chi 2" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+                </div>
+                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
+                  <img src="/images/chi-3.jpg" alt="Ảnh Quỳnh Chi 3" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+                </div>
+                <div className="reveal overflow-hidden rounded-[2rem] bg-cream-dark shadow-lg shadow-charcoal/5 ring-1 ring-gold-light/40">
+                  <img src="/images/chi-4.jpg" alt="Ảnh Quỳnh Chi 4" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* RSVP */}
-          <section id="rsvp" className="py-20 md:py-28">
+          <section id="rsvp" className="py-16 md:py-20 reveal">
             <div className="mx-auto max-w-3xl px-6">
               <div className="rounded-xl border border-gold-light/50 bg-cream-light p-7 shadow-md md:p-12">
                 <div className="text-center">
@@ -219,4 +265,4 @@ export default function Home() {
     </>
   )
 }
- 
+
