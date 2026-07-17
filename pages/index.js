@@ -107,20 +107,25 @@ export default function Home() {
           </div>
         </header>
 
-                  <main className="mx-auto mt-8 overflow-hidden rounded-[2rem] border border-gold-light/40 bg-cream shadow-lg w-full">
+        <main className="mx-auto mt-8 overflow-hidden rounded-[2rem] border border-gold-light/40 bg-cream shadow-lg w-full">
           {/* Hero */}
           <section id="hero" className="relative min-h-screen pt-16 reveal overflow-hidden bg-cream-light">
             <div className="mx-auto relative grid min-h-[calc(100vh-5rem)] max-w-7xl grid-cols-1 items-center gap-6 px-4 py-8 sm:px-6 sm:py-10 md:px-12 lg:grid-cols-2 lg:gap-12">
-              <div className="space-y-7 relative z-10">
-                <h1 className="font-serif text-4xl leading-[0.95] text-charcoal sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Lê Nguyễn<br /><span className="font-light italic text-charcoal/90">Quỳnh Chi</span></h1>
-                <div className="h-px w-16 bg-gold"></div>
+              <div className="space-y-7 relative z-10 text-center sm:text-left">
+                <div className="inline-block sm:block">
+                  <h1 className="font-serif text-4xl leading-[0.95] text-charcoal sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl whitespace-nowrap sm:whitespace-normal">
+                    <span className="inline sm:block">Lê Nguyễn</span>{' '}
+                    <span className="inline sm:block font-light italic text-charcoal/90">Quỳnh Chi</span>
+                  </h1>
+
+                  <div className="h-px bg-gold w-full sm:w-16 mx-auto sm:mx-0 my-3" aria-hidden="true" />
+                </div>
                 <p className="max-w-xl font-serif text-base italic leading-relaxed text-charcoal-light md:text-xl">“Một hành trình đẹp đã đi đến cột mốc đáng nhớ. Chi rất mong được gặp mọi người trong ngày đặc biệt này để cùng lưu giữ những khoảnh khắc thật vui và ý nghĩa.”</p>
                 <p className="text-sm font-light leading-relaxed text-charcoal-light">Đại học Luật Hà Nội · Khóa K47 (2022–2026)</p>
                 <a href="#details" className="inline-flex items-center justify-center rounded bg-charcoal px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-cream transition hover:bg-gold hover:text-charcoal-dark">Xem thông tin buổi lễ</a>
               </div>
 
               <div className="relative mx-auto w-full max-w-lg relative z-10">
-                {/* <div className="absolute inset-0 translate-x-4 translate-y-4 rounded border border-gold"></div> */}
                 <div className="relative aspect-[3/4] overflow-hidden rounded bg-cream-dark shadow-2xl shadow-charcoal/20">
                   <img src="/images/chi-potratit.jpg" alt="Lê Nguyễn Quỳnh Chi - Đại học Luật Hà Nội" className="h-full w-full object-cover" width="600" height="800" />
                 </div>
@@ -135,7 +140,7 @@ export default function Home() {
             id="details"
             className="reveal border-y border-gold-light/25 bg-cream-light py-16 md:py-20"
           >
-            <div className="mx-auto max-w-6xl px-6 md:px-12">
+            <div className="mx-auto max-w-full px-6 md:px-12">
               {/* Title */}
               <div className="mb-10 text-center">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-dark">
@@ -316,7 +321,7 @@ export default function Home() {
             <h2 className="font-serif text-3xl font-light italic text-gold md:text-4xl">Trân trọng cảm ơn</h2>
             <p className="mx-auto max-w-xl text-sm font-light leading-relaxed text-cream/65">Cảm ơn mọi người đã luôn yêu thương, đồng hành và dành những lời chúc tốt đẹp cho mình. Sự hiện diện và tình cảm của mọi người sẽ làm ngày tốt nghiệp này trở nên trọn vẹn hơn.</p>
             <div className="mx-auto h-px w-12 bg-gold/50"></div>
-            <p className="text-xl uppercase tracking-[0.28em] text-gold">Lê Nguyễn Quỳnh Chi · 2026</p>
+            <p className="text-xl uppercase tracking-[0.28em] text-gold">Lê Nguyễn Quỳnh Chi 2026</p>
           </div>
         </footer>
       </div>
