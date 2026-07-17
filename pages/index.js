@@ -133,32 +133,122 @@ export default function Home() {
 
 
           {/* Details */}
-          <section id="details" className="border-y border-gold-light/25 bg-cream-light py-16 md:py-20 reveal">
+          <section
+            id="details"
+            className="reveal border-y border-gold-light/25 bg-cream-light py-16 md:py-20"
+          >
             <div className="mx-auto max-w-6xl px-6 md:px-12">
-              <div className="mb-12 text-center">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-dark">Thông tin buổi lễ</p>
-                <h2 className="mt-3 font-serif text-4xl text-charcoal md:text-5xl">Thời gian & Địa điểm</h2>
-                <p className="mx-auto mt-4 max-w-2xl text-sm font-light leading-relaxed text-charcoal-light md:text-base">Sự hiện diện của mọi người là niềm vui và vinh hạnh lớn đối với Quỳnh Chi.</p>
+              {/* Title */}
+              <div className="mb-10 text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-dark">
+                  Thông tin buổi lễ
+                </p>
+
+                <h2 className="mt-3 font-serif text-4xl text-charcoal md:text-5xl">
+                  Thời gian & Địa điểm
+                </h2>
+
+                <p className="mx-auto mt-4 max-w-2xl text-sm font-light leading-relaxed text-charcoal-light md:text-base">
+                  Mọi chi tiết quan trọng đều nằm trong cùng một khối, dễ nhìn và thuận
+                  tiện khi tham khảo.
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <article className="rounded-lg border border-gold-light/50 bg-cream p-8 shadow-sm md:p-10">
-                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-gold text-gold">
-                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                  </div>
-                  <h3 className="font-serif text-3xl text-charcoal">Thời gian</h3>
-                  <p className="mt-5 text-sm leading-7 text-charcoal-light">Thứ Sáu, ngày <strong className="font-semibold text-charcoal">24 tháng 07 năm 2026</strong><br />Đón khách: <strong className="font-semibold text-charcoal">08:00</strong><br />Kết thúc dự kiến: <strong className="font-semibold text-charcoal">11:00</strong></p>
-                </article>
+              {/* Information card + image */}
+              <div className="mx-auto max-w-4xl">
+                <div className="relative">
+                  {/* Information card */}
+                  <div className="relative z-10 mx-auto w-[92%] overflow-hidden rounded-[2rem] border border-gold-light/50 bg-cream px-6 py-8 shadow-xl md:w-[88%] md:px-10 md:py-10">
+                    <div className="mx-auto max-w-md text-center">
+                      {/* Time */}
+                      <p className="font-serif text-base font-medium uppercase tracking-[0.08em] text-charcoal md:text-lg">
+                        8:00, Thứ Sáu
+                      </p>
 
-                <article className="rounded-lg border border-gold-light/50 bg-cream p-8 shadow-sm md:p-10">
-                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-full border border-gold text-gold">
-                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                      {/* Date */}
+                      <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-4">
+                        {/* Month */}
+                        <div className="flex flex-col items-center">
+                          <div className="h-px w-full bg-gold-dark/70" />
+
+                          <p className="my-2 whitespace-nowrap font-serif text-sm uppercase text-charcoal sm:text-base md:text-lg">
+                            Tháng 07
+                          </p>
+
+                          <div className="h-px w-full bg-gold-dark/70" />
+                        </div>
+
+                        {/* Day */}
+                        <div className="px-1 font-serif text-5xl leading-none text-charcoal md:text-6xl">
+                          24
+                        </div>
+
+                        {/* Year */}
+                        <div className="flex flex-col items-center">
+                          <div className="h-px w-full bg-gold-dark/70" />
+
+                          <p className="my-2 whitespace-nowrap font-serif text-sm uppercase text-charcoal sm:text-base md:text-lg">
+                            Năm 2026
+                          </p>
+
+                          <div className="h-px w-full bg-gold-dark/70" />
+                        </div>
+                      </div>
+
+                      {/* Location */}
+                      <div className="mt-8">
+                        <p className="font-serif text-sm font-medium text-charcoal-light">
+                          Tại địa điểm:
+                        </p>
+
+                        <h3 className="mt-2 font-serif text-2xl uppercase leading-tight text-charcoal md:text-3xl">
+                          Trung tâm
+                          <br />
+                          Hội nghị Quốc gia (NCC)
+                        </h3>
+
+                        <p className="mt-3 text-sm leading-relaxed text-charcoal-light">
+                          Số 01 Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội
+                        </p>
+                      </div>
+
+                      {/* Directions */}
+                      <a
+                        href="https://www.google.com/maps/place/Trung+t%C3%A2m+H%E1%BB%99i+ngh%E1%BB%8B+Qu%E1%BB%91c+gia+Vi%E1%BB%87t+Nam/@21.006872,105.787655,16z/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group mt-8 inline-flex flex-col items-center gap-2 font-serif text-sm font-semibold uppercase tracking-[0.08em] text-charcoal transition hover:text-gold-dark"
+                      >
+                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold-light/60 bg-white text-gold-dark transition group-hover:border-gold-dark/40 group-hover:bg-cream-light">
+                          <svg
+                            className="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path d="M12 2C8.41 2 5.5 4.91 5.5 8.5c0 4.83 5.58 11.87 6.21 12.66a.37.37 0 0 0 .58 0c.63-.79 6.21-7.83 6.21-12.66C18.5 4.91 15.59 2 12 2Zm0 9.25A2.75 2.75 0 1 1 12 5.75a2.75 2.75 0 0 1 0 5.5Z" />
+                          </svg>
+                        </span>
+
+                        <span>Xem chỉ đường</span>
+                      </a>
+                    </div>
                   </div>
-                  <h3 className="font-serif text-3xl text-charcoal">Địa điểm</h3>
-                  <p className="mt-5 text-sm font-medium leading-7 text-charcoal">Hội trường Trung tâm Hội nghị Quốc gia</p>
-                  <p className="text-sm font-light leading-6 text-charcoal-light">Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội</p>
-                  <a href="https://www.google.com/maps/place/Trung+t%C3%A2m+H%E1%BB%99i+ngh%E1%BB%8B+Qu%E1%BB%91c+gia+Vi%E1%BB%87t+Nam/@21.006872,105.787655,16z/" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-gold-dark transition hover:text-charcoal">Xem chỉ đường Google Maps →</a>
-                </article>
+
+                  {/* Image */}
+                  <div className="-mt-8 overflow-hidden border border-gold-light/40 bg-cream shadow-lg md:-mt-10">
+                    <div className="relative aspect-[4/3] w-full md:aspect-[16/9]">
+                      <img
+                        src="/images/chi-horizon.jpg"
+                        alt="Khoảnh khắc lễ tốt nghiệp"
+                        className="h-full w-full object-cover object-center transition duration-700 hover:scale-[1.02]"
+                      />
+
+                      {/* Soft overlay */}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
