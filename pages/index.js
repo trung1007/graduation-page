@@ -30,7 +30,6 @@ export default function Home() {
       event.preventDefault()
       if (!rsvpForm) return
       submitBtn.disabled = true
-      submitBtn.textContent = 'Đang gửi...'
       visualError?.classList.add('hidden')
 
       try {
@@ -108,21 +107,20 @@ export default function Home() {
           </div>
         </header>
 
-        <main>
+                  <main className="mx-auto mt-8 overflow-hidden rounded-[2rem] border border-gold-light/40 bg-cream shadow-lg w-full">
           {/* Hero */}
-          <section id="hero" className="relative min-h-screen pt-20 reveal overflow-hidden bg-cream-light">
-            <div className="mx-auto relative grid min-h-[calc(100vh-5rem)] max-w-7xl grid-cols-1 items-center gap-8 px-6 py-12 md:px-12 lg:grid-cols-2 lg:gap-12">
+          <section id="hero" className="relative min-h-screen pt-16 reveal overflow-hidden bg-cream-light">
+            <div className="mx-auto relative grid min-h-[calc(100vh-5rem)] max-w-7xl grid-cols-1 items-center gap-6 px-4 py-8 sm:px-6 sm:py-10 md:px-12 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-7 relative z-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-charcoal">Thư mời chúc mừng tốt nghiệp</p>
-                <h1 className="font-serif text-5xl leading-[0.95] text-charcoal sm:text-6xl lg:text-7xl xl:text-8xl">Lê Nguyễn<br /><span className="font-light italic text-charcoal/90">Quỳnh Chi</span></h1>
-                <div className="h-px w-20 bg-gold"></div>
-                <p className="max-w-xl font-serif text-xl italic leading-relaxed text-charcoal-light md:text-2xl">“Một hành trình đẹp đã đi đến cột mốc đáng nhớ. Chi rất mong được gặp mọi người trong ngày đặc biệt này để cùng lưu giữ những khoảnh khắc thật vui và ý nghĩa.”</p>
+                <h1 className="font-serif text-4xl leading-[0.95] text-charcoal sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Lê Nguyễn<br /><span className="font-light italic text-charcoal/90">Quỳnh Chi</span></h1>
+                <div className="h-px w-16 bg-gold"></div>
+                <p className="max-w-xl font-serif text-base italic leading-relaxed text-charcoal-light md:text-xl">“Một hành trình đẹp đã đi đến cột mốc đáng nhớ. Chi rất mong được gặp mọi người trong ngày đặc biệt này để cùng lưu giữ những khoảnh khắc thật vui và ý nghĩa.”</p>
                 <p className="text-sm font-light leading-relaxed text-charcoal-light">Đại học Luật Hà Nội · Khóa K47 (2022–2026)</p>
                 <a href="#details" className="inline-flex items-center justify-center rounded bg-charcoal px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-cream transition hover:bg-gold hover:text-charcoal-dark">Xem thông tin buổi lễ</a>
               </div>
 
               <div className="relative mx-auto w-full max-w-lg relative z-10">
-                <div className="absolute inset-0 translate-x-4 translate-y-4 rounded border border-gold"></div>
+                {/* <div className="absolute inset-0 translate-x-4 translate-y-4 rounded border border-gold"></div> */}
                 <div className="relative aspect-[3/4] overflow-hidden rounded bg-cream-dark shadow-2xl shadow-charcoal/20">
                   <img src="/images/chi-potratit.jpg" alt="Lê Nguyễn Quỳnh Chi - Đại học Luật Hà Nội" className="h-full w-full object-cover" width="600" height="800" />
                 </div>
@@ -154,11 +152,11 @@ export default function Home() {
               <div className="mx-auto max-w-4xl">
                 <div className="relative">
                   {/* Information card */}
-                  <div className="relative z-10 mx-auto w-[92%] overflow-hidden rounded-[2rem] border border-gold-light/50 bg-cream px-6 py-8 shadow-xl md:w-[88%] md:px-10 md:py-10">
+                  <div className="relative z-10 mx-auto w-[94%] overflow-hidden rounded-[2rem] border border-gold-light/50 bg-cream px-6 py-8 shadow-xl md:w-[88%] md:px-10 md:py-10">
                     <div className="mx-auto max-w-md text-center">
                       {/* Time */}
                       <p className="font-serif text-base font-medium uppercase tracking-[0.08em] text-charcoal md:text-3xl">
-                        8:00, Thứ Sáu
+                        10:30, Thứ Sáu
                       </p>
 
                       {/* Date */}
@@ -175,7 +173,7 @@ export default function Home() {
                         </div>
 
                         {/* Day */}
-                        <div className="px-1 font-serif text-6xl leading-none text-charcoal md:text-8xl">
+                        <div className="px-1 font-serif text-5xl leading-none text-charcoal md:text-6xl">
                           24
                         </div>
 
@@ -293,8 +291,8 @@ export default function Home() {
 
                   <div id="guest-count-wrapper" className="space-y-2 overflow-hidden transition-all duration-300">
                     <label htmlFor="guest_count" className="block text-xs font-semibold uppercase tracking-[0.16em] text-charcoal">Số lượng người tham dự</label>
-                    <select name="guest_count" id="guest_count" className="w-full rounded border border-gold-light/70 bg-cream px-4 py-3 text-sm text-charcoal outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30">
-                      <option value="1" selected>1 người</option>
+                    <select name="guest_count" id="guest_count" defaultValue="1" className="w-full rounded border border-gold-light/70 bg-cream px-4 py-3 text-sm text-charcoal outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/30">
+                      <option value="1">1 người</option>
                       <option value="2">2 người</option>
                       <option value="3">3 người</option>
                       <option value="4">4 người</option>

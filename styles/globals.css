@@ -20,4 +20,18 @@ img{display:block;max-width:100%;height:auto}
   transform:translateY(0);
 }
 
+/* Prefer lining (aligned) numerals for serif headings and date elements */
+.font-serif {
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+  font-variant-numeric: lining-nums;
+}
+
+/* Helper class to force lining numerals where needed */
+.num-lining {
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+  font-variant-numeric: lining-nums;
+}
+
 /* Tailwind will provide utility classes via CDN script in document */
