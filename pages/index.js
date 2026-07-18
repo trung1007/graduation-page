@@ -114,8 +114,8 @@ export default function Home() {
               <div className="space-y-7 relative z-10 text-center sm:text-left">
                 <div className="inline-block sm:block">
                   <h1 className="font-serif text-4xl leading-[0.95] text-charcoal sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl whitespace-nowrap sm:whitespace-normal">
-                    <span className="inline sm:block">Lê Nguyễn</span>{' '}
-                    <span className="inline sm:block font-light italic text-charcoal/90">Quỳnh Chi</span>
+                    {/* <span className="inline sm:block">Lê Nguyễn</span>{' '} */}
+                    <span className="inline sm:block font-light italic text-charcoal/90">Lê Nguyễn Quỳnh Chi</span>
                   </h1>
 
                   <div className="h-px bg-gold w-full sm:w-16 mx-auto sm:mx-0 my-3" aria-hidden="true" />
