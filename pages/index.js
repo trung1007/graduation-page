@@ -157,7 +157,7 @@ export default function Home() {
               <div className="mx-auto max-w-4xl">
                 <div className="relative">
                   {/* Information card */}
-                  <div className="relative z-10 mx-auto w-[94%] overflow-hidden rounded-[2rem] border border-gold-light/50 bg-cream px-6 py-8 shadow-xl md:w-[88%] md:px-10 md:py-10">
+                  <div className="relative z-10 mx-auto w-full overflow-hidden rounded-[2rem] border border-gold-light/50 bg-cream px-4 py-8 shadow-xl md:w-[88%] md:px-10 md:py-10">
                     <div className="mx-auto max-w-md text-center">
                       {/* Time */}
                       <p className="font-serif text-base font-medium uppercase tracking-[0.08em] text-charcoal md:text-3xl">
